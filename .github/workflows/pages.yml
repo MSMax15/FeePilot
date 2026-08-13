@@ -32,3 +32,43 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Notify IndexNow from sitemap
+        continue-on-error: true
+        run: |
+          python - <<'PY'
+          import json
+          import pathlib
+          import urllib.error
+          import urllib.request
+          import xml.etree.ElementTree as ET
+
+          key_file = pathlib.Path('2e97b1090ed05f7dca4e923ea8420563.txt')
+          sitemap = pathlib.Path('sitemap.xml')
+          if not key_file.exists() or not sitemap.exists():
+              raise SystemExit('IndexNow skipped: key file or sitemap missing')
+
+          key = key_file.read_text(encoding='utf-8').strip()
+          root = ET.parse(sitemap).getroot()
+          ns = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          urls = [n.text.strip() for n in root.findall('sm:url/sm:loc', ns) if n.text]
+          payload = json.dumps({
+              'host': 'saveonfees.eu',
+              'key': key,
+              'keyLocation': f'https://saveonfees.eu/{key}.txt',
+              'urlList': urls,
+          }).encode('utf-8')
+
+          req = urllib.request.Request(
+              'https://api.indexnow.org/indexnow',
+              data=payload,
+              headers={'Content-Type': 'application/json; charset=utf-8'},
+              method='POST',
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=20) as res:
+                  print(f'IndexNow: HTTP {res.status} for {len(urls)} URLs')
+          except urllib.error.HTTPError as exc:
+              print(f'IndexNow: HTTP {exc.code} for {len(urls)} URLs')
+              print(exc.read().decode('utf-8', errors='replace')[:500])
+              raise
+          PY
