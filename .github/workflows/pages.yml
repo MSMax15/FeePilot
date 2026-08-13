@@ -23,15 +23,79 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Prepare public artifact
+        run: |
+          set -euo pipefail
+          rm -rf public
+          mkdir -p public
+          cp index.html robots.txt sitemap.xml .nojekyll favicon.ico favicon.svg favicon-v2.svg apple-touch-icon.png 2e97b1090ed05f7dca4e923ea8420563.txt public/
+          cp -R assets public/assets
+          for dir in */; do
+            if [ -f "${dir}index.html" ]; then
+              mkdir -p "public/${dir}"
+              cp "${dir}index.html" "public/${dir}index.html"
+            fi
+          done
+
+      - name: Validate static site
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          from urllib.parse import urlparse
+          import re
+          import xml.etree.ElementTree as ET
+
+          root = Path('public')
+          html_files = sorted(root.glob('**/index.html'))
+          if not html_files:
+              raise SystemExit('No HTML pages found')
+
+          sitemap = ET.parse(root / 'sitemap.xml').getroot()
+          ns = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          sitemap_paths = set()
+          for node in sitemap.findall('sm:url/sm:loc', ns):
+              url = (node.text or '').strip()
+              parsed = urlparse(url)
+              if parsed.scheme != 'https' or parsed.netloc != 'saveonfees.eu':
+                  raise SystemExit(f'Invalid sitemap host: {url}')
+              sitemap_paths.add(parsed.path)
+
+          page_paths = {'/'}
+          for page in html_files:
+              rel = page.relative_to(root)
+              route = '/' if rel.as_posix() == 'index.html' else '/' + rel.parent.as_posix().strip('/') + '/'
+              page_paths.add(route)
+              text = page.read_text(encoding='utf-8')
+              for required in ('<title>', 'name="description"', 'rel="canonical"', 'name="viewport"'):
+                  if required not in text:
+                      raise SystemExit(f'{route}: missing {required}')
+              for href in re.findall(r'href=["\'](https?://[^"\']+)', text):
+                  host = urlparse(href).hostname or ''
+                  if 'fomo.family' in host and href != 'https://fomo.family/r/LMP506':
+                      raise SystemExit(f'{route}: non-referral FOMO outbound {href}')
+
+          if page_paths != sitemap_paths:
+              raise SystemExit(f'Sitemap/page mismatch: pages={sorted(page_paths)} sitemap={sorted(sitemap_paths)}')
+          print(f'Validated {len(html_files)} HTML pages and {len(sitemap_paths)} sitemap URLs')
+          PY
+          node --check public/assets/home-premium.js
+          node --check public/assets/experience.js
+          node --check public/assets/ledger-affiliate.js
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: public
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
       - name: Notify IndexNow from sitemap
         continue-on-error: true
         run: |
