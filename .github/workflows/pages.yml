@@ -84,6 +84,7 @@ jobs:
           node --check public/assets/home-premium.js
           node --check public/assets/experience.js
           node --check public/assets/ledger-affiliate.js
+          node --check public/assets/partners.js
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
