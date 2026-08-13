@@ -1,9 +1,23 @@
-# FeePilot
+# SaveOnFees
 
-Independent static FOMO referral guide and fee calculator.
+**Live:** https://saveonfees.eu/
+
+Independent FOMO newcomer guide, fee tools and meme-coin utilities. The site combines a premium interactive onboarding experience with transparent affiliate disclosure.
+
+## Main tools
+
+- FOMO Fee Calculator
+- Meme Coin Profit / Market Cap Calculator
+- Would You Ape? fictional risk-reading game
+- FOMO fee, referral and newcomer guides
+- FOMO trade stories with both extreme wins and major-loss context
+
+## Referral disclosure
 
 Referral code: `LMP506`
 
-Referral URL: `https://fomo.family/r/LMP506`
+Referral route: `https://fomo.family/r/LMP506`
 
-The production site is deployed with GitHub Pages from the static files in this repository.
+SaveOnFees is independent and is not operated by FOMO. Referral links may generate affiliate compensation from eligible activity. Crypto and leveraged products involve substantial risk.
+
+The production site is deployed through GitHub Pages from `main`.
