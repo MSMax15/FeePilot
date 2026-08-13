@@ -17,9 +17,9 @@
     if(title==='More Ledger'){
       media.innerHTML=`<span class="realBrandLabel">LEDGER</span><div class="devicePair"><img src="${ledgerFlex}" alt="Ledger Flex" loading="lazy" decoding="async"><img src="${ledgerNano}" alt="Ledger Nano Gen5" loading="lazy" decoding="async"></div>`;
     }
-    const top=q('.offerTopline',card);
-    if(top&&!q('.offerStatus',top)){
-      const s=document.createElement('span');s.className='offerStatus';s.textContent='route live';top.appendChild(s);
+    if(!q('.offerStatus',card)){
+      const s=document.createElement('span');s.className='offerStatus';s.textContent='route live';
+      const body=q('.offerBody',card);if(body)body.appendChild(s);
     }
   });
 
