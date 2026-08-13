@@ -32,6 +32,7 @@ jobs:
           cp index.html robots.txt sitemap.xml .nojekyll favicon.ico favicon.svg favicon-v2.svg apple-touch-icon.png 2e97b1090ed05f7dca4e923ea8420563.txt public/
           cp -R assets public/assets
           for dir in */; do
+            [ "$dir" = "public/" ] && continue
             if [ -f "${dir}index.html" ]; then
               mkdir -p "public/${dir}"
               cp "${dir}index.html" "public/${dir}index.html"
@@ -62,7 +63,7 @@ jobs:
                   raise SystemExit(f'Invalid sitemap host: {url}')
               sitemap_paths.add(parsed.path)
 
-          page_paths = {'/'}
+          page_paths = set()
           for page in html_files:
               rel = page.relative_to(root)
               route = '/' if rel.as_posix() == 'index.html' else '/' + rel.parent.as_posix().strip('/') + '/'
