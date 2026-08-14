@@ -3,210 +3,361 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>SaveOnFees — Find a Better Route Before You Pay</title>
-  <meta name="description" content="Pick what you are trying to do and SaveOnFees surfaces a relevant fee, wallet, shopping or hosting route with the disclosure shown before you leave.">
+  <title>SaveOnFees — Know the Route Before You Pay</title>
+  <meta name="description" content="Understand fees, compare relevant partner routes, explore hardware-wallet choices and use free tools before you pay. Independent affiliate links are disclosed.">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#041018">
+  <meta name="theme-color" content="#020405">
   <link rel="canonical" href="https://saveonfees.eu/">
-  <link rel="icon" href="/assets/cutmark.svg?v=10" type="image/svg+xml">
+  <link rel="icon" href="/assets/fs-liquid.svg?v=12" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico?v=8">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SaveOnFees">
-  <meta property="og:title" content="SaveOnFees — Pay for the thing. Not the friction.">
-  <meta property="og:description" content="A faster way to find relevant partner routes, fee guides and free tools before you pay.">
+  <meta property="og:title" content="SaveOnFees — Pay less. Keep more.">
+  <meta property="og:description" content="Know the route before you pay: fee research, partner routes, wallets and free tools.">
   <meta property="og:url" content="https://saveonfees.eu/">
   <meta property="og:image" content="https://saveonfees.eu/assets/og-card.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SaveOnFees — Pay for the thing. Not the friction.">
-  <meta name="twitter:description" content="Choose the job. See one relevant route. Verify the terms before you pay.">
+  <meta name="twitter:title" content="SaveOnFees — Pay less. Keep more.">
+  <meta name="twitter:description" content="Know the route before you pay.">
   <meta name="twitter:image" content="https://saveonfees.eu/assets/og-card.jpg">
-  <link rel="stylesheet" href="/assets/home-premium.css?v=11">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SaveOnFees","url":"https://saveonfees.eu/","description":"Independent affiliate discovery, fee research and free crypto tools."}</script>
+  <link rel="stylesheet" href="/assets/home-premium.css?v=12">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SaveOnFees","url":"https://saveonfees.eu/","description":"Independent fee research, partner-route discovery and free crypto tools."}</script>
   <script defer src="/assets/partners.js?v=1"></script>
-  <script defer src="/assets/home-premium.js?v=11"></script>
+  <script defer src="/assets/home-premium.js?v=12"></script>
 </head>
 <body>
-  <div class="ambient ambientA" aria-hidden="true"></div>
-  <div class="ambient ambientB" aria-hidden="true"></div>
+  <div class="pageNoise" aria-hidden="true"></div>
+  <div class="ambientOrb ambientOrbA" aria-hidden="true"></div>
+  <div class="ambientOrb ambientOrbB" aria-hidden="true"></div>
 
   <div class="navWrap">
     <div class="shell">
-      <header class="nav">
+      <header class="nav" id="siteNav">
         <a class="brand" href="/" aria-label="SaveOnFees home">
-          <img src="/assets/cutmark.svg?v=10" alt="SaveOnFees SF logo">
-          <span class="brandText"><strong>SaveOnFees</strong><span>Better routes before you pay</span></span>
+          <span class="brandMark"><img src="/assets/fs-liquid.svg?v=12" alt=""></span>
+          <span class="brandName"><strong>SaveOnFees</strong><small>Know the route before you pay</small></span>
         </a>
-        <nav class="navLinks" aria-label="Primary">
-          <a href="#finder">Find a route</a>
-          <a href="#routes">All routes</a>
-          <a href="#tools">Free tools</a>
+        <nav class="navLinks" aria-label="Primary navigation">
+          <a href="#router" data-nav-job="trade">Trade</a>
+          <a href="#router" data-nav-job="wallets">Store</a>
+          <a href="#router" data-nav-job="shop">Shop</a>
+          <a href="#router" data-nav-job="build">Build</a>
+          <a href="#tools">Tools</a>
+          <a href="#research">Resources</a>
         </nav>
-        <a class="navCta" href="#finder">Find my route <span>↘</span></a>
-        <button class="menuButton" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+        <a class="navCta" href="#router">Explore <span>↘</span></a>
+        <button class="menuButton" type="button" aria-label="Open navigation" aria-expanded="false">
+          <span></span><span></span>
+        </button>
       </header>
     </div>
   </div>
 
   <div class="mobileMenu" aria-hidden="true">
-    <nav aria-label="Mobile">
-      <a href="#finder">Find a route <span>01</span></a>
-      <a href="#routes">All routes <span>02</span></a>
-      <a href="#tools">Free tools <span>03</span></a>
-    </nav>
+    <div class="mobileMenuInner">
+      <span class="mobileLabel">EXPLORE SAVEONFEES</span>
+      <nav aria-label="Mobile navigation">
+        <a href="#router" data-nav-job="trade">Trade <span>01</span></a>
+        <a href="#router" data-nav-job="wallets">Store <span>02</span></a>
+        <a href="#router" data-nav-job="shop">Shop <span>03</span></a>
+        <a href="#router" data-nav-job="build">Build <span>04</span></a>
+        <a href="#tools">Free tools <span>05</span></a>
+        <a href="#research">Resources <span>06</span></a>
+      </nav>
+    </div>
   </div>
 
   <main>
     <section class="hero" id="top">
+      <div class="heroGlow" aria-hidden="true"></div>
       <div class="shell heroGrid">
-        <div class="heroCopyWrap">
-          <div class="eyebrow">SAVEONFEES / LESS NOISE</div>
-          <h1>Pay for the thing.<br><span>Not the friction.</span></h1>
-          <p class="heroCopy">Choose what you are trying to do. We narrow the page to a relevant route, show the disclosure first, and keep the comparison optional.</p>
+        <div class="heroCopy reveal">
+          <div class="eyebrow"><i></i> ROUTES THAT RESPECT YOUR MONEY</div>
+          <h1>PAY LESS.<br><span>KEEP MORE.</span></h1>
+          <p>Understand the fee, choose the route and verify the terms before you leave.</p>
           <div class="heroActions">
-            <a class="primary" href="#finder">Find my route <span>↓</span></a>
-            <a class="secondary" href="#routes">See every route</a>
+            <a class="button buttonPrimary" href="#router">Explore routes <span>→</span></a>
+            <a class="button buttonGhost" href="#tools">Free tools</a>
           </div>
-          <div class="heroProof" aria-label="SaveOnFees principles">
-            <span>No fake countdowns</span><i></i><span>No invented savings</span><i></i><span>Affiliate links disclosed</span>
+          <div class="heroSignals" aria-label="SaveOnFees principles">
+            <span>Independent</span><i></i><span>No login</span><i></i><span>Affiliate links disclosed</span>
           </div>
         </div>
 
-        <div class="feeStage" aria-label="Interactive SaveOnFees route visual">
-          <div class="stageHalo haloOne"></div>
-          <div class="stageHalo haloTwo"></div>
-          <div class="stageCard cardTrade"><span>01</span><b>TRADE</b><small>eligible fee routes</small></div>
-          <div class="stageCard cardStore"><span>02</span><b>STORE</b><small>self-custody routes</small></div>
-          <div class="stageCard cardShop"><span>03</span><b>SHOP</b><small>planned purchases</small></div>
-          <div class="stageCard cardBuild"><span>04</span><b>BUILD</b><small>domains & hosting</small></div>
-          <div class="stageCore">
-            <span class="coreRing"></span>
-            <img src="/assets/cutmark.svg?v=10" alt="SaveOnFees SF logo">
-            <div><strong>ONE JOB</strong><small>ONE CLEAR START</small></div>
+        <div class="liquidStage" id="liquidStage" aria-label="SaveOnFees FS liquid-metal brand visual">
+          <div class="metalHalo haloBack" aria-hidden="true"></div>
+          <div class="metalHalo haloMid" aria-hidden="true"></div>
+          <div class="metalHalo haloFront" aria-hidden="true"></div>
+          <div class="liquidRibbon ribbonOne" aria-hidden="true"></div>
+          <div class="liquidRibbon ribbonTwo" aria-hidden="true"></div>
+          <div class="logoCore">
+            <div class="logoReflection" aria-hidden="true"></div>
+            <img src="/assets/fs-liquid.svg?v=12" alt="FS liquid-metal monogram" fetchpriority="high">
           </div>
-          <div class="stageLine lineA"></div><div class="stageLine lineB"></div><div class="stageLine lineC"></div>
+          <div class="floatBadge badgeA"><span>FEES</span><strong>See the friction.</strong></div>
+          <div class="floatBadge badgeB"><span>ROUTES</span><strong>Choose the path.</strong></div>
+          <div class="floatBadge badgeC"><span>TOOLS</span><strong>Check before paying.</strong></div>
         </div>
       </div>
-      <a class="scrollCue" href="#finder" aria-label="Scroll to route finder"><span>SCROLL</span><i></i></a>
+      <a class="scrollCue" href="#router" aria-label="Scroll to route selector">
+        <span>SCROLL TO CHOOSE</span><i></i>
+      </a>
     </section>
 
-    <section class="finderSection" id="finder">
+    <section class="routerSection" id="router">
       <div class="shell">
-        <div class="sectionIntro reveal">
-          <div class="sectionKicker">Quick route</div>
-          <h2>Tell us the job.<br><span>We cut the noise.</span></h2>
-          <p>One click is enough to start. We show a relevant route from the current SaveOnFees partner list — not a fake “best” ranking.</p>
+        <div class="sectionHead reveal">
+          <div>
+            <span class="sectionKicker">START WITH INTENT</span>
+            <h2>WHAT ARE YOU<br><em>HERE FOR?</em></h2>
+          </div>
+          <p>You should not need to understand an affiliate catalog. Pick the job first; SaveOnFees gives you a relevant starting point.</p>
         </div>
 
-        <div class="finderPanel reveal" id="routeFinder">
-          <div class="finderLeft">
-            <div class="finderStep"><span>01</span><div><b>What are you doing?</b><small>Choose one.</small></div></div>
-            <div class="jobGrid" role="group" aria-label="Choose what you want to do">
-              <button class="jobButton" type="button" data-job="trade"><span class="jobIcon">↗</span><b>Trade</b><small>Crypto platform route</small></button>
-              <button class="jobButton" type="button" data-job="wallets"><span class="jobIcon">◇</span><b>Store crypto</b><small>Hardware wallet route</small></button>
-              <button class="jobButton" type="button" data-job="shop"><span class="jobIcon">⌁</span><b>Shop</b><small>General partner search</small></button>
-              <button class="jobButton" type="button" data-job="build"><span class="jobIcon">＋</span><b>Build a site</b><small>Domains & hosting</small></button>
+        <div class="choiceGrid">
+          <a class="choiceCard reveal active" data-job="trade" href="#route-dock">
+            <span class="choiceIndex">01</span>
+            <div class="widget widgetTrade" aria-hidden="true"><i></i><i></i><i></i><b>↗</b></div>
+            <div class="choiceCopy"><strong>Trade</strong><small>Crypto fees & platform routes</small></div>
+            <span class="choiceArrow">↗</span>
+          </a>
+          <a class="choiceCard reveal" data-job="wallets" href="#route-dock">
+            <span class="choiceIndex">02</span>
+            <div class="widget widgetStore" aria-hidden="true"><div class="cube"><i class="face faceA"></i><i class="face faceB"></i><i class="face faceC"></i></div></div>
+            <div class="choiceCopy"><strong>Store</strong><small>Wallets & self-custody</small></div>
+            <span class="choiceArrow">↗</span>
+          </a>
+          <a class="choiceCard reveal" data-job="shop" href="#route-dock">
+            <span class="choiceIndex">03</span>
+            <div class="widget widgetShop" aria-hidden="true"><i class="bag"></i><i class="handle"></i></div>
+            <div class="choiceCopy"><strong>Shop</strong><small>Planned purchases</small></div>
+            <span class="choiceArrow">↗</span>
+          </a>
+          <a class="choiceCard reveal" data-job="build" href="#route-dock">
+            <span class="choiceIndex">04</span>
+            <div class="widget widgetBuild" aria-hidden="true"><i></i><b>&lt;/&gt;</b></div>
+            <div class="choiceCopy"><strong>Build</strong><small>Domains & hosting</small></div>
+            <span class="choiceArrow">↗</span>
+          </a>
+        </div>
+
+        <div class="routeDock reveal" id="route-dock" aria-live="polite">
+          <div class="routeDockIntro">
+            <span class="routeStatus"><i></i> RELEVANT ROUTE</span>
+            <h3 id="routeDockTitle">Trade</h3>
+            <p id="routeDockReason">Starting with the fee terms makes the outbound click easier to judge.</p>
+            <div class="routeSteps" aria-label="Route process">
+              <span class="active">Understand</span><i></i><span>Choose</span><i></i><span>Verify</span>
             </div>
           </div>
-
-          <div class="finderResult" id="finderResult" aria-live="polite">
-            <div class="resultIdle">
-              <div class="idleOrb"><img src="/assets/cutmark.svg?v=10" alt=""></div>
-              <span>YOUR ROUTE APPEARS HERE</span>
-              <p>Pick a job on the left. No signup, no form, no email.</p>
+          <div class="routeDockResult" id="routeDockResult">
+            <div class="routeLoading">
+              <img src="/assets/fs-liquid.svg?v=12" alt="">
+              <span>Loading current route…</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="flowSection" aria-label="How SaveOnFees works">
-      <div class="shell flowShell">
-        <div class="flowHeader">
-          <div class="sectionKicker">The flow</div>
-          <h2>Less dashboard.<br>More direction.</h2>
+    <section class="storySection" id="story">
+      <div class="shell storyGrid">
+        <div class="storySticky reveal">
+          <span class="sectionKicker">WHY ROUTES MATTER</span>
+          <h2>FEES HIDE<br><em>EVERYWHERE.</em></h2>
+          <p>The expensive part is often not one visible number. Funding, trading, moving and storing can each add friction.</p>
+          <div class="storyRail" aria-hidden="true"><span id="storyProgress"></span></div>
         </div>
-        <div class="flowDeck">
-          <article class="flowCard flowOne reveal">
-            <div class="flowNumber">01</div>
-            <div><span>CHOOSE</span><h3>Start with the job.</h3><p>Trade, store, shop or build. You should not need to understand an affiliate catalog before you can use it.</p></div>
-            <div class="flowVisual"><div class="choicePill active">Trade</div><div class="choicePill">Store</div><div class="choicePill">Shop</div></div>
+        <div class="storySteps">
+          <article class="storyStep reveal" data-story-step="1">
+            <span>01 / FUND</span><div class="stepOrb"><i></i></div>
+            <h3>How you enter matters.</h3><p>Card, Apple Pay, bank and crypto-deposit routes can have different limits or third-party costs.</p>
           </article>
-          <article class="flowCard flowTwo reveal">
-            <div class="flowNumber">02</div>
-            <div><span>NARROW</span><h3>See one clear start.</h3><p>The finder surfaces one relevant route first. Alternatives stay available only when they are useful.</p></div>
-            <div class="flowVisual routeMock"><i></i><strong>Relevant route</strong><small>Disclosure shown before click</small><button type="button" tabindex="-1">Open route ↗</button></div>
+          <article class="storyStep reveal" data-story-step="2">
+            <span>02 / TRADE</span><div class="stepOrb"><i></i></div>
+            <h3>The headline fee is not the whole story.</h3><p>Minimum fees, spreads and product-specific costs can change the effective result.</p>
           </article>
-          <article class="flowCard flowThree reveal">
-            <div class="flowNumber">03</div>
-            <div><span>VERIFY</span><h3>Check terms. Then leave.</h3><p>Prices, eligibility and partner terms can change. SaveOnFees points to the route; the partner destination remains the source of truth.</p></div>
-            <div class="flowVisual verifyMock"><div><span>✓</span> Partner disclosed</div><div><span>✓</span> No fake urgency</div><div><span>✓</span> Terms live at destination</div></div>
+          <article class="storyStep reveal" data-story-step="3">
+            <span>03 / MOVE</span><div class="stepOrb"><i></i></div>
+            <h3>Moving assets creates another decision.</h3><p>Network and withdrawal conditions depend on the route and provider.</p>
+          </article>
+          <article class="storyStep reveal" data-story-step="4">
+            <span>04 / STORE</span><div class="stepOrb"><i></i></div>
+            <h3>Trading and custody are different jobs.</h3><p>A hardware signer can separate longer-term custody from the trading interface, but self-custody adds responsibility.</p>
+          </article>
+          <article class="storyStep reveal" data-story-step="5">
+            <span>05 / BUY</span><div class="stepOrb"><i></i></div>
+            <h3>Know why you are clicking.</h3><p>SaveOnFees shows the disclosure before the outbound route so the destination is a choice, not a surprise.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="routesSection" id="routes">
+    <section class="decisionSection" id="routes">
       <div class="shell">
-        <div class="sectionIntro split reveal">
-          <div><div class="sectionKicker">All routes</div><h2>Everything.<br><span>Only once.</span></h2></div>
-          <p>No featured-products duplicate. Every active partner route lives in one clean list below.</p>
+        <div class="sectionHead reveal">
+          <div><span class="sectionKicker">WORKING ROUTER</span><h2>COMPARE THE DECISION.<br><em>BEFORE YOU PAY.</em></h2></div>
+          <p>This is a working route layer, not a price quote: research first, partner route second, live terms at the destination.</p>
         </div>
-        <div class="routeGrid" id="routeGrid"></div>
-        <noscript><p class="noscript">JavaScript is required to load the current partner route list.</p></noscript>
+
+        <div class="decisionWidget reveal">
+          <div class="decisionTop">
+            <div><span>SELECTED INTENT</span><strong id="decisionIntent">TRADE</strong></div>
+            <span class="liveDot"><i></i> ROUTE READY</span>
+          </div>
+          <div class="decisionPath">
+            <div class="decisionNode active">
+              <span>01</span><b>RESEARCH</b><small id="decisionResearch">Current fee guide</small>
+            </div>
+            <i class="decisionLine"></i>
+            <div class="decisionNode">
+              <span>02</span><b>ROUTE</b><small id="decisionPartner">FOMO</small>
+            </div>
+            <i class="decisionLine"></i>
+            <div class="decisionNode">
+              <span>03</span><b>VERIFY</b><small>Live partner terms</small>
+            </div>
+          </div>
+          <div class="decisionAction" id="decisionAction"></div>
+        </div>
       </div>
     </section>
 
     <section class="toolsSection" id="tools">
       <div class="shell">
-        <div class="sectionIntro split reveal">
-          <div><div class="sectionKicker">Free tools</div><h2>Useful before<br><span>you buy anything.</span></h2></div>
-          <p>Calculators and risk-learning tools remain part of SaveOnFees. Not every useful click needs a commission.</p>
+        <div class="sectionHead reveal">
+          <div><span class="sectionKicker">NO PURCHASE REQUIRED</span><h2>FREE TOOLS.<br><em>REAL UTILITY.</em></h2></div>
+          <p>A visitor should get value even when no affiliate action happens.</p>
         </div>
-        <div class="toolRail">
-          <a class="toolCard reveal" data-tool="fee_calculator" href="/fomo-fee-calculator/"><span class="toolNum">01</span><div class="toolIcon">%</div><strong>FOMO fee calculator</strong><p>Estimate current fee math and referral impact.</p><i>Open tool ↗</i></a>
-          <a class="toolCard reveal" data-tool="meme_math" href="/meme-coin-profit-calculator/"><span class="toolNum">02</span><div class="toolIcon">×</div><strong>Meme math</strong><p>Turn market-cap scenarios into hypothetical values.</p><i>Open tool ↗</i></a>
-          <a class="toolCard reveal" data-tool="risk_game" href="/would-you-ape/"><span class="toolNum">03</span><div class="toolIcon">?</div><strong>Would You Ape?</strong><p>Practice reading fictional token risk signals.</p><i>Open tool ↗</i></a>
-          <a class="toolCard reveal" data-tool="fomo_review" href="/fomo-app-review/"><span class="toolNum">04</span><div class="toolIcon">i</div><strong>FOMO review</strong><p>Understand the platform before creating an account.</p><i>Open guide ↗</i></a>
+
+        <div class="toolGrid">
+          <a class="toolCard reveal" data-tool="fee_calculator" href="/fomo-fee-calculator/">
+            <span class="toolNumber">01</span><div class="toolWidget calcWidget"><b>%</b><i></i></div>
+            <strong>Fee Calculator</strong><p>Run FOMO fee math before a trade.</p><span>Open tool ↗</span>
+          </a>
+          <a class="toolCard reveal" data-tool="meme_math" href="/meme-coin-profit-calculator/">
+            <span class="toolNumber">02</span><div class="toolWidget orbitWidget"><i></i><i></i><b>×</b></div>
+            <strong>Meme Math</strong><p>Test hypothetical market-cap outcomes.</p><span>Open tool ↗</span>
+          </a>
+          <a class="toolCard reveal" data-tool="risk_game" href="/would-you-ape/">
+            <span class="toolNumber">03</span><div class="toolWidget gaugeWidget"><i></i><b>?</b></div>
+            <strong>Would You Ape?</strong><p>Practice spotting fictional token-risk signals.</p><span>Open tool ↗</span>
+          </a>
+          <a class="toolCard reveal" data-tool="beginner_guide" href="/fomo-app-for-beginners/">
+            <span class="toolNumber">04</span><div class="toolWidget bookWidget"><i></i><i></i></div>
+            <strong>Beginner Guide</strong><p>Understand the FOMO flow before using it.</p><span>Open guide ↗</span>
+          </a>
         </div>
+      </div>
+    </section>
+
+    <section class="walletSection" id="store">
+      <div class="shell walletGrid">
+        <div class="walletCopy reveal">
+          <span class="sectionKicker">SELF-CUSTODY</span>
+          <h2>TRADE FAST.<br><em>STORE SLOWER.</em></h2>
+          <p>If you move from trading to longer-term holding, custody becomes a separate decision. Compare the hardware before you buy it.</p>
+          <div class="walletActions">
+            <a class="button buttonPrimary" href="/ledger-flex-vs-nano-gen5/" data-tool="ledger_compare">Compare Ledger options <span>→</span></a>
+            <small>Comparison page contains clearly disclosed Amazon affiliate links.</small>
+          </div>
+        </div>
+        <div class="walletScene reveal" aria-label="Abstract hardware wallet visual">
+          <div class="walletFloor" aria-hidden="true"></div>
+          <div class="walletDevice">
+            <div class="walletEdge"></div>
+            <div class="walletScreen">
+              <img src="/assets/fs-liquid.svg?v=12" alt="">
+              <span>VERIFY</span><strong>YOUR ROUTE</strong>
+            </div>
+            <div class="walletSide"></div>
+          </div>
+          <div class="walletTag tagOne">KEYS</div>
+          <div class="walletTag tagTwo">VERIFY</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="researchSection" id="research">
+      <div class="shell researchPanel reveal">
+        <div class="researchCopy">
+          <span class="sectionKicker">FOMO RESEARCH</span>
+          <h2>USING FOMO?<br><em>UNDERSTAND IT FIRST.</em></h2>
+          <p>Fee terms, referral details, Apple Pay troubleshooting and a beginner path live in one research cluster. The referral route currently advertises 10% off eligible fees; verify the live benefit shown by FOMO because terms can change.</p>
+          <div class="researchLinks">
+            <a href="/fomo-fees/">Fees <span>↗</span></a>
+            <a href="/fomo-referral-code/">Referral <span>↗</span></a>
+            <a href="/fomo-apple-pay-not-working/">Apple Pay help <span>↗</span></a>
+            <a href="/fomo-app-for-beginners/">Beginner guide <span>↗</span></a>
+          </div>
+        </div>
+        <div class="researchVisual">
+          <div class="codeOrb"><span>LMP506</span><small>VERIFY CURRENT TERMS</small></div>
+          <div class="researchRing ringA"></div><div class="researchRing ringB"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="allRoutesSection" id="all-routes">
+      <div class="shell">
+        <div class="sectionHead compact reveal">
+          <div><span class="sectionKicker">ALL ACTIVE ROUTES</span><h2>EVERYTHING.<br><em>ONLY ONCE.</em></h2></div>
+          <p>No duplicate “featured” shelf. The current partner routes are rendered here from the central registry.</p>
+        </div>
+        <div class="allRoutesGrid" id="allRoutesGrid"></div>
+        <noscript><p class="noscript">JavaScript is required to render the current partner route list.</p></noscript>
       </div>
     </section>
 
     <section class="trustSection">
-      <div class="shell trustPanel reveal">
-        <div class="trustLead"><div class="sectionKicker">The rule</div><h2>Useful first.<br><span>Affiliate second.</span></h2></div>
-        <div class="trustPoints">
-          <article><span>01</span><div><b>Clear route</b><p>We show what a partner link does before you leave the site.</p></div></article>
-          <article><span>02</span><div><b>No invented benefits</b><p>No fake prices, countdowns, popularity or guaranteed savings.</p></div></article>
-          <article><span>03</span><div><b>Partner ≠ endorsement</b><p>Affiliate relationships are disclosed and do not remove product or crypto risk.</p></div></article>
+      <div class="shell">
+        <div class="sectionHead reveal">
+          <div><span class="sectionKicker">THE RULES</span><h2>USEFUL FIRST.<br><em>AFFILIATE SECOND.</em></h2></div>
+          <p>Premium design does not change the standard: no invented prices, fake urgency or guaranteed savings.</p>
+        </div>
+        <div class="trustGrid">
+          <article class="trustCard reveal"><div class="trustSeal"><i></i><b>01</b></div><strong>Independent</strong><p>SaveOnFees is not the provider behind the outbound product.</p></article>
+          <article class="trustCard reveal"><div class="trustSeal"><i></i><b>02</b></div><strong>Transparent</strong><p>Affiliate and referral routes are disclosed before you leave.</p></article>
+          <article class="trustCard reveal"><div class="trustSeal"><i></i><b>03</b></div><strong>Useful without buying</strong><p>Guides and tools remain available without a purchase.</p></article>
+          <article class="trustCard reveal"><div class="trustSeal"><i></i><b>04</b></div><strong>No invented savings</strong><p>Claims come from current terms or clearly labelled examples.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="seoSupport">
-      <div class="shell seoCard reveal">
-        <div>
-          <div class="sectionKicker">FOMO research</div>
-          <h2>Referral code LMP506</h2>
-          <p>SaveOnFees still maintains its FOMO newcomer and fee research. FOMO's current referral route advertises 10% off eligible fees for referred users; terms and eligibility can change, so confirm the benefit shown by FOMO before trading.</p>
-          <p class="riskCopy">Crypto and memecoins are highly speculative. A referral discount reduces an eligible fee; it does not make a trade profitable or reduce market risk.</p>
+    <section class="finalSection">
+      <div class="shell finalPanel reveal">
+        <div class="finalLogo">
+          <div class="finalHalo" aria-hidden="true"></div>
+          <img src="/assets/fs-liquid.svg?v=12" alt="FS liquid-metal monogram">
         </div>
-        <div class="seoLinks">
-          <a href="/fomo-referral-code/">Referral code guide <span>↗</span></a>
-          <a href="/fomo-fees/">Current FOMO fees <span>↗</span></a>
-          <a href="/fomo-app-for-beginners/">Beginner guide <span>↗</span></a>
-          <a href="/fomo-trade-stories/">Balanced trader stories <span>↗</span></a>
+        <div class="finalCopy">
+          <span class="sectionKicker">SAVEONFEES</span>
+          <h2>KNOW THE ROUTE.<br><em>BEFORE YOU PAY.</em></h2>
+          <div class="finalActions">
+            <a class="button buttonPrimary" href="#router">Explore SaveOnFees <span>→</span></a>
+            <a class="button buttonGhost" href="#tools">Use free tools</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="shell footerGrid">
-      <div>
-        <a class="brand" href="/"><img src="/assets/cutmark.svg?v=10" alt="SaveOnFees SF logo"><span class="brandText"><strong>SaveOnFees</strong><span>Independent affiliate discovery</span></span></a>
-        <p class="footerText">Affiliate disclosure: eligible partner actions may benefit SaveOnFees. As an Amazon Associate, we earn from qualifying purchases. SaveOnFees is independent and is not operated by Amazon, Ledger, Hostinger or FOMO.</p>
+    <div class="shell footerTop">
+      <a class="brand footerBrand" href="/">
+        <span class="brandMark"><img src="/assets/fs-liquid.svg?v=12" alt=""></span>
+        <span class="brandName"><strong>SaveOnFees</strong><small>Independent route discovery</small></span>
+      </a>
+      <div class="footerColumns">
+        <div><strong>Explore</strong><a href="#router" data-nav-job="trade">Trade</a><a href="#router" data-nav-job="wallets">Store</a><a href="#router" data-nav-job="shop">Shop</a><a href="#router" data-nav-job="build">Build</a></div>
+        <div><strong>Tools</strong><a href="/fomo-fee-calculator/">Fee calculator</a><a href="/meme-coin-profit-calculator/">Meme Math</a><a href="/would-you-ape/">Would You Ape?</a></div>
+        <div><strong>Resources</strong><a href="/fomo-fees/">FOMO fees</a><a href="/fomo-referral-code/">FOMO referral</a><a href="/ledger-flex-vs-nano-gen5/">Wallet comparison</a></div>
+        <div><strong>Social</strong><a data-social="instagram" href="https://www.instagram.com/save.onfees/" target="_blank" rel="noopener noreferrer">Instagram · @save.onfees ↗</a></div>
       </div>
-      <div class="footerLinks"><a href="/crypto-tools/">Crypto tools</a><a href="/fomo-fees/">FOMO fees</a><a href="/ledger-flex-vs-nano-gen5/">Wallet comparison</a><a data-social="instagram" href="https://instagram.com/save.on.fees" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+    <div class="shell footerBottom">
+      <p>Affiliate disclosure: eligible partner actions may benefit SaveOnFees. As an Amazon Associate, SaveOnFees earns from qualifying purchases. SaveOnFees is independent and is not operated by Amazon, Ledger, Hostinger or FOMO.</p>
+      <span>© SaveOnFees</span>
     </div>
   </footer>
 </body>
