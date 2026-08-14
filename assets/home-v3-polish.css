@@ -1,0 +1,7 @@
+.logoCore img,.finalLogo img{
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 50%,rgba(0,0,0,.92) 61%,transparent 82%);
+  mask-image:radial-gradient(ellipse at center,#000 50%,rgba(0,0,0,.92) 61%,transparent 82%);
+}
+.logoCore{
+  background:radial-gradient(circle at 50% 46%,rgba(38,231,243,.07),transparent 65%);
+}
