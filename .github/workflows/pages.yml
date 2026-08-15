@@ -64,22 +64,69 @@ jobs:
               sitemap_paths.add(parsed.path)
 
           page_paths = set()
+          page_data = []
           for page in html_files:
               rel = page.relative_to(root)
               route = '/' if rel.as_posix() == 'index.html' else '/' + rel.parent.as_posix().strip('/') + '/'
               page_paths.add(route)
-              text = page.read_text(encoding='utf-8')
+              page_data.append((route, page, page.read_text(encoding='utf-8')))
+
+          titles = {}
+          for route, page, text in page_data:
               for required in ('<title>', 'name="description"', 'rel="canonical"', 'name="viewport"'):
                   if required not in text:
                       raise SystemExit(f'{route}: missing {required}')
-              for href in re.findall(r'href=["\'](https?://[^"\']+)', text):
-                  host = urlparse(href).hostname or ''
-                  if 'fomo.family' in host and href != 'https://fomo.family/r/LMP506':
-                      raise SystemExit(f'{route}: non-referral FOMO outbound {href}')
+
+              title_match = re.search(r'<title>(.*?)</title>', text, re.I | re.S)
+              if not title_match or not title_match.group(1).strip():
+                  raise SystemExit(f'{route}: empty title')
+              title = re.sub(r'\s+', ' ', title_match.group(1)).strip()
+              if title in titles:
+                  raise SystemExit(f'Duplicate title: {title!r} on {titles[title]} and {route}')
+              titles[title] = route
+
+              description_match = re.search(r'<meta\s+name=["\']description["\']\s+content=["\']([^"\']+)', text, re.I)
+              if not description_match or not description_match.group(1).strip():
+                  raise SystemExit(f'{route}: empty meta description')
+
+              canonical_match = re.search(r'<link\s+rel=["\']canonical["\']\s+href=["\']([^"\']+)', text, re.I)
+              if not canonical_match:
+                  raise SystemExit(f'{route}: canonical not parseable')
+              expected_canonical = 'https://saveonfees.eu' + route
+              if canonical_match.group(1) != expected_canonical:
+                  raise SystemExit(f'{route}: canonical {canonical_match.group(1)!r} != {expected_canonical!r}')
+
+              h1_count = len(re.findall(r'<h1\b', text, re.I))
+              if h1_count != 1:
+                  raise SystemExit(f'{route}: expected exactly one H1, found {h1_count}')
+
+              for href in re.findall(r'href=["\']([^"\']+)', text, re.I):
+                  if href.startswith(('mailto:', 'tel:', 'javascript:', '#')):
+                      continue
+                  parsed = urlparse(href)
+                  if parsed.scheme in ('http', 'https'):
+                      host = parsed.hostname or ''
+                      if 'fomo.family' in host and href != 'https://fomo.family/r/LMP506':
+                          raise SystemExit(f'{route}: non-referral FOMO outbound {href}')
+                      continue
+                  if not href.startswith('/'):
+                      continue
+                  path = parsed.path
+                  if path.startswith('/assets/'):
+                      if not (root / path.lstrip('/')).exists():
+                          raise SystemExit(f'{route}: missing asset link {path}')
+                      continue
+                  if path.endswith('/'):
+                      if path not in page_paths:
+                          raise SystemExit(f'{route}: broken internal page link {path}')
+                  else:
+                      target = root / path.lstrip('/')
+                      if path != '/' and not target.exists():
+                          raise SystemExit(f'{route}: broken internal file link {path}')
 
           if page_paths != sitemap_paths:
               raise SystemExit(f'Sitemap/page mismatch: pages={sorted(page_paths)} sitemap={sorted(sitemap_paths)}')
-          print(f'Validated {len(html_files)} HTML pages and {len(sitemap_paths)} sitemap URLs')
+          print(f'Validated {len(html_files)} HTML pages, unique titles, canonicals, H1s, internal links and {len(sitemap_paths)} sitemap URLs')
           PY
           node --check public/assets/home-premium.js
           node --check public/assets/experience.js
