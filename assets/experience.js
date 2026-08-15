@@ -69,9 +69,10 @@
     '/how-to-fund-fomo/':['apple','fees','beginner','referral'],
     '/fomo-discount/':['referral','calc','fees','howref']
   };
+  const staticRelatedPaths=new Set(['/fomo-fees/','/fomo-referral-code/','/fomo-apple-pay-not-working/','/fomo-app-for-beginners/','/how-to-fund-fomo/']);
   const relatedKeys=relatedByPath[location.pathname]||((location.pathname.includes('fomo')||location.pathname.includes('referral'))?['fees','funding','referral','calc']:null);
   const footer=q('.footer');
-  if(relatedKeys&&footer&&!q('.relatedGuides')){
+  if(relatedKeys&&footer&&!q('.relatedGuides')&&!staticRelatedPaths.has(location.pathname)){
     const section=document.createElement('section');section.className='section relatedGuides';
     section.innerHTML=`<div class="wrap"><div class="kicker">Related SaveOnFees guides</div><h2>Keep the next click useful.</h2><div class="grid2">${relatedKeys.map(k=>{const [title,href,desc]=coreLinks[k];return `<article class="card"><div class="num">RELATED</div><h3>${title}</h3><p>${desc}</p><a class="btn" data-related-link="${k}" href="${href}">Read guide →</a></article>`}).join('')}</div></div>`;
     footer.before(section);
@@ -81,7 +82,7 @@
   const f=q('.footer .wrap');
   if(f&&!q('.autoFooterLinks',f)){
     const n=document.createElement('div');n.className='autoFooterLinks';
-    n.innerHTML='<a href="/">Home</a><a href="/crypto-tools/">Tools</a><a href="/fomo-fees/">FOMO fees</a><a href="/how-to-fund-fomo/">Funding</a><a href="/fomo-referral-code/">Referral</a><a href="/ledger-flex-vs-nano-gen5/">Wallets</a><a href="/would-you-ape/">Would You Ape?</a><a href="https://www.instagram.com/save.onfees/" target="_blank" rel="noopener">Instagram</a>';
+    n.innerHTML='<a href="/">Home</a><a href="/fomo-app-for-beginners/">FOMO beginner guide</a><a href="/how-to-fund-fomo/">How to fund FOMO</a><a href="/fomo-fees/">FOMO fees</a><a href="/fomo-referral-code/">Referral code</a><a href="/fomo-apple-pay-not-working/">Apple Pay help</a><a href="/crypto-tools/">Tools</a><a href="/ledger-flex-vs-nano-gen5/">Wallets</a><a href="/would-you-ape/">Would You Ape?</a><a href="https://www.instagram.com/save.onfees/" target="_blank" rel="noopener">Instagram</a>';
     f.appendChild(n);
   }
 
